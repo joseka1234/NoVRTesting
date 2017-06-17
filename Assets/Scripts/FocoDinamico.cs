@@ -30,11 +30,12 @@ public class FocoDinamico : MonoBehaviour
 	void Update ()
 	{
 		foreach (GameObject obj in GameObject.FindGameObjectsWithTag ("Interactable")) {
-			obj.transform.localScale = Vector3.one;
+			obj.layer = 0;
 		}
 
 		GameObject focus = getObjectFocus ();
-		focus.transform.localScale = Vector3.one / 2.0f;
+		// focus.transform.localScale = Vector3.one / 2.0f;
+		focus.layer = 8;
 	}
 
 	void RayosCono (GameObject obj)
